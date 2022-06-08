@@ -1,0 +1,151 @@
+.slider{
+    background-color: $background;
+
+    .slider__item {
+        display: flex;
+        align-items: center;
+        padding: 50px 150px;
+        box-sizing: border-box;
+    }
+
+    .slider__info {
+        box-sizing: border-box;
+        padding-right: 100px;
+
+        p {
+            font-size: 29px;
+            line-height: 1.2;
+            color: $white;
+            text-align: left;
+            font-weight: 400;
+            margin: 60px 0;
+        }
+      
+          .slider__title {
+            font-size: 66px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: $white;
+            text-align: left;
+        }
+    }
+
+    .slider__btn {
+        @include btn();
+    }
+
+    .owl-dots {
+        text-align: center;
+        padding: 0 0 15px 0;
+    
+        .owl-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 10px;
+          background-color: $white;
+          box-sizing: border-box;
+          border: none;
+          box-shadow: none;
+          padding: 0;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+    
+        .active {
+          background-color: $black;
+        }
+    
+      }
+}
+
+@media (max-width: 1300px) {
+  
+    .slider {
+  
+      .slider__info {
+  
+        .slider__title {
+          font-size: 50px;
+        }
+  
+      }
+  
+    }
+  
+}
+
+@media (max-width: 880px) {
+  
+    .slider {
+  
+      .slider__img {
+        display: none;
+      }
+  
+      .slider__info {
+        padding-right: 0;
+        flex-basis: 100%;
+      }
+  
+    }
+  
+}
+
+@media (max-width: 768px) {
+  
+    .slider {
+  
+      .slider__info {
+
+        .slider__title {
+            text-align: center;
+          }
+  
+        p {
+          margin: 15px 0;
+          text-align: center;
+        }
+
+        .slider__btn {
+            margin: 25px auto;
+        }
+  
+      }
+  
+    }
+  
+}
+
+@media (max-width: 480px) {
+  
+    .slider {
+  
+      .slider__item {
+        padding: 0 15px;
+      }
+  
+      .slider__info {
+  
+        .slider__title {
+          font-size: 30px;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        .slider__btn {
+            width: 160px;
+            font-size: 17px;
+        }
+  
+      }
+  
+    }
+  
+  }  
+
+  
+
+
+  
