@@ -8,6 +8,10 @@ const del = require('del')
 const concat = require('gulp-concat')
 const autoprefixer = require('gulp-autoprefixer')
 const sync = require('browser-sync').create()
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
 
 function html() {
   return src('src/**.html')
@@ -51,8 +55,30 @@ function imageJPG() {
 }
 
 function imageSVG() {
-  return src('src/img/*.svg')
-  .pipe(dest('dist/img'))
+  return src('src/img/**/*.svg')
+      .pipe(svgmin({
+        js2svg: {
+          pretty: true
+        }
+      }))
+      .pipe(cheerio({
+        run: function ($) {
+          $('[fill]').removeAttr('fill');
+          $('[stroke]').removeAttr('stroke');
+          $('[style]').removeAttr('style');
+        },
+        parserOptions: {xmlMode: true}
+      }))
+      .pipe(replace('&gt;', '>'))
+      // build svg sprite
+      .pipe(svgSprite({
+        mode: {
+          symbol: {
+            sprite: "sprite.svg"
+          }
+        }
+      }))
+      .pipe(dest('dist/img'))
 }
 
 function clear() {
@@ -71,7 +97,7 @@ function serve() {
   watch('src/js/**.js', series(js)).on('change', sync.reload)
   watch('src/img/*.png', series(imagePNG)).on('change', sync.reload)
   watch('src/img/*.jpg', series(imageJPG)).on('change', sync.reload)
-  watch('src/img/*.svg', series(imageSVG)).on('change', sync.reload)
+  watch('src/img/**/*.svg', series(imageSVG)).on('change', sync.reload)
 }
 
 exports.build = series(clear, scss, css, js, imagePNG, imageJPG, imageSVG, html)

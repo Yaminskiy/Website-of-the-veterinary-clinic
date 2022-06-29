@@ -1,0 +1,146 @@
+.employee{
+    padding: 100px 20px;
+    box-sizing: border-box;
+
+    .employee__title {
+        font-size: 75px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $black;
+        text-align: center;
+        margin: 0;
+    }
+
+    .employee__info{
+        font-size: 33px;
+        line-height: 1.2;
+        text-align: center;
+        font-weight: 400;
+        color: $black;
+        margin: 60px 0 100px 0;
+    }
+
+    .employee__block{
+        display: flex;
+        justify-content: space-between;
+
+        .employee__element{
+
+            img {
+                display: block;
+                max-width: 100%;
+                margin: 0 auto 40px;
+            }
+
+            p {
+                font-size: 25px;
+                line-height: 1.2;
+                text-align: center;
+                margin-top: 30px;
+                color: $black;
+          
+                a {
+                  font-size: 37px;
+                  line-height: 1.2;
+                  text-decoration: none;
+                  color: $black;
+                  font-weight: 600;
+                  text-align: center;
+                  
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                  
+                }
+          
+            }
+
+            .employee__icons{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                margin: 25px 0;
+
+                svg {
+                    width: 37px;
+                    height: 37px;
+
+                    &:hover{
+                        fill: $background-slider-bt;
+                    }
+                }
+            }
+        }
+
+
+    }
+    
+}
+
+@media (max-width: 1300px) {
+
+    .employee {
+
+        .employee__title{
+            font-size: 50px;
+        }
+
+        .employee__info{
+            font-size: 29px;
+        }
+    }
+  
+}
+  
+  @media (max-width: 768px) {
+  
+    .employee {
+
+        padding: 50px 20px;
+
+        .employee__info{
+            margin: 15px 0;
+        }
+
+        .employee__block{
+
+            .employee__element{
+
+                p{
+                    font-size: 20px;
+                    margin-top: 15px;
+
+                    a{
+                        font-size: 27px;
+                    }
+                }
+            }
+        }
+    }
+  
+}
+
+@media (max-width: 480px) {
+
+    .employee {
+        padding: 20px 20px;
+
+        .employee__title{
+            font-size: 30px;
+        }
+
+        .employee__info{
+            font-size: 20px;
+        }
+    }
+  
+}
+
+
+  
+
+  
+
+
+  
+

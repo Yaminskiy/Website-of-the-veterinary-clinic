@@ -14,19 +14,59 @@ $(document).ready(function () {
     $('.slider .owl-carousel').owlCarousel({
       loop:true,
       margin:0,
-      nav:true,
+      nav:false,
       dots: false,
       navText: [],
+      autoplay: true,
       responsive:{
         0:{
           items:1,
-          dots: true,
-          nav: false
+          dots: true
         },
         480:{
           items:1
         }
       }
+    });
+
+    $('.carousel').owlCarousel({
+      loop:true,
+      margin:30,
+      nav:false,
+      dots: false,
+      navText: [],
+      autoplay: true,
+      responsive:{
+        0:{
+          items: 1
+        },
+        480:{
+          items: 2
+        },
+        680: {
+          items: 3
+        }
+      }
+    });
+
+    let show = true;
+    let countbox = ".counts__element";
+    $(window).on("scroll load resize", function () {
+        if (!show) return false;
+        let w_top = $(window).scrollTop();
+        let e_top = $(countbox).offset().top;
+        let w_height = $(window).height();
+        let d_height = $(document).height();
+        let e_height = $(countbox).outerHeight();
+        if (w_top + 500 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+            $('.counts__number').css('opacity', '1');
+            $('.counts__number').spincrement({
+                thousandSeparator: "",
+                duration: 6000
+            });
+             
+            show = false;
+        }
     });
     
 });

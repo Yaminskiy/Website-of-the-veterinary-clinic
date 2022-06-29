@@ -1,0 +1,141 @@
+.counts {
+    background: url('../img/counts-bg.png') center no-repeat;
+    background-size: cover;
+    padding: 120px 0 110px;
+    position: relative;
+  
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      background-color: rgba(252, 195, 2, 0.8);
+    }
+  
+    .counts__block {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .counts__element {
+      text-align: center;
+      margin: 20px 0;
+
+      img, svg {
+        fill: $white;
+      }
+  
+      .counts__img {
+        width: 110px;
+        height: 110px;
+      }
+  
+      .counts__img2 {
+        width: 110px;
+        height: 110px;
+      }
+  
+      .counts__img3 {
+        width: 110px;
+        height: 110px;
+      }
+  
+      p {
+        color: $white;
+        font-size: 42px;
+        line-height: 1.2;
+        font-family: "Poppins";
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      .counts__number {
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 1.2;
+        font-family: "Poppins";
+        font-size: 42px;
+        margin-top: 30px;
+        opacity: 0;
+      }
+  
+    }
+  
+  }
+  
+  @media (max-width: 980px) {
+  
+    .counts {
+      padding: 50px 0;
+
+      .counts__element {
+
+        .counts__img {
+            width: 110px;
+            height: 110px;
+        }
+      
+          .counts__img2 {
+            width: 110px;
+            height: 110px;
+        }
+      
+          .counts__img3 {
+            width: 110px;
+            height: 110px;
+        }
+      
+          p {
+            font-size: 42px;
+        }
+    
+          .counts__number {
+            margin-top: 30px;
+            font-size: 42px;
+        }
+      }
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+  
+    .counts {
+  
+        .counts__element {
+            flex-basis: 100%;
+
+            .counts__img {
+                width: 70px;
+                height: 70px;
+              }
+          
+              .counts__img2 {
+                width: 70px;
+                height: 70px;
+              }
+          
+              .counts__img3 {
+                width: 70px;
+                height: 70px;
+              }
+          
+              p {
+                font-size: 30px;
+              }
+        
+              .counts__number {
+                margin-top: 15px;
+                font-size: 30px;
+              }
+        }
+  
+    }
+  
+  }

@@ -1,0 +1,146 @@
+.video-left{
+    display: flex;
+    align-items: center;
+    padding: 50px 150px;
+    box-sizing: border-box;
+
+    .video__info-left{
+        box-sizing: border-box;
+        padding-left: 80px;
+
+        p {
+            font-size: 29px;
+            line-height: 1.2;
+            color: $black;
+            text-align: right;
+            font-weight: 400;
+            margin: 60px 0;
+        }
+
+        .video__title{
+            font-size: 66px;
+            line-height: 1.2;
+            font-weight: 600;
+            color: $black;
+            text-align: right;
+        }
+
+    }
+
+    .video__btn{
+        @include btn($bg: $background, $bc: $background);
+        float: right;
+    }
+}
+
+@media (max-width: 1300px) {
+  
+    .video-left {
+  
+      .video__info-left {
+  
+        .video__title {
+          font-size: 50px;
+        }
+
+        .video__btn {
+            max-width: 160px;
+            font-size: 17px;
+        }
+
+      }
+
+
+      .video__frame{
+          
+        iframe{
+            width: 530px;
+            height: 285px;
+        }
+      }
+  
+    }
+  
+}
+
+@media (max-width: 880px) {
+  
+    .video-left {
+        flex-direction: column;
+  
+      .video__info-left {
+        padding-left: 0;
+        flex-basis: 100%;
+
+        .video__btn {
+            max-width: 180px;
+            font-size: 21px;
+        }
+      }
+
+      .video__frame{
+          margin-top: 60px;
+        iframe{
+            width: 560px;
+            height: 315px;
+        }
+      }
+  
+    }
+  
+}
+
+@media (max-width: 768px) {
+  
+    .video-left {
+  
+      .video__info-left {
+
+        .video__title {
+            text-align: center;
+          }
+  
+        p {
+          margin: 15px 0;
+          text-align: center;
+        }
+
+        .video__btn {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+  
+      }
+    }
+}
+
+@media (max-width: 480px) {
+  
+    .video-left  {
+        padding: 0 15px;
+  
+      .video__info-left {
+  
+        .video__title {
+          font-size: 30px;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        .video__btn {
+            max-width: 160px !important;
+            font-size: 17px !important;
+        }
+  
+      }
+
+      .video__frame{
+        display: none;
+    }
+  
+    }
+  
+}

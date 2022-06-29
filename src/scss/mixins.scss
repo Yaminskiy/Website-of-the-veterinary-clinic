@@ -6,13 +6,14 @@
     margin: 0 auto;
 }
 
-@mixin btn($bg: $background-slider-bt, $fs: 21px, $lh: 1.2, $ls: 0.54px, $br: 0px, $w: 180px, $clr: $white) {
+@mixin btn($bg: none, $fs: 21px, $lh: 1.2, $ls: 0.54px, $br: 0px, $bc:$white, $w: 180px, $clr: $white) {
     width: $w;
     color: $clr;
     font-size: $fs;
     line-height: $lh;
     letter-spacing: $ls;
     background-color: $bg;
+    border: 2px solid $bc;
     border-radius: $br;
     padding: 20px 0;
     display: block;
@@ -22,7 +23,8 @@
     @content;
 
     &:hover {
-        background-color: lighten($bg, 15%);
+        background-color: $background-slider-bt;
+        border-color: $background-slider-bt;
       }
     
 }
